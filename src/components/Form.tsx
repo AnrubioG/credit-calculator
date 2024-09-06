@@ -139,7 +139,7 @@ export function Form() {
         </div>
 
         <div className="mb-6">
-          <p className="text-md ">Seleccione el tipo de cálculo</p>
+          <p className="text-md ">Selecciona el tipo de cálculo</p>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="amortizacion"

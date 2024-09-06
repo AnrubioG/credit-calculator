@@ -42,7 +42,7 @@ export function Display() {
                 El pago total de intereses a lo largo del plazo será:
               </p>
               <p className="text-[#D8DB2F] text-4xl font-bold">
-                {formatAmount(monthlyAmount)}
+                {formatAmount(totalInterest)}
               </p>
             </div>
           )}

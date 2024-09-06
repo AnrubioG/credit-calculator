@@ -32,7 +32,6 @@ export const useCreditStore = create<CreditState>()(
           monthlyInterestRate *
           Math.pow(1 + monthlyInterestRate, +term)) /
         denominator;
-      console.log(monthlyAmount);
 
       set(() => ({
         monthlyAmount: Math.round(monthlyAmount),
