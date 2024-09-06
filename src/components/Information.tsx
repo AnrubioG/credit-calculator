@@ -3,7 +3,7 @@ export default function Information() {
     <>
       <div className="flex flex-col p-10 text-center gap-5">
         <img
-          src="/img/illustration-empty.svg"
+          src="/illustration-empty.svg"
           alt="Ilustracion calculadora"
           className="h-48 w-auto"
         />
@@ -11,7 +11,7 @@ export default function Information() {
           Aquí se mostrarán los resultados
         </h2>
         <p className="text-[#94B2C6]">
-          Complete el formulario y de click en{" "}
+          Completa el formulario y haz click en{" "}
           <span className="text-[#D8DB2F]">"calcular amortización"</span> para
           poder ver la amortización mensual
         </p>

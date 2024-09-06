@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Credit } from "../types";
+import { useCreditStore } from "../store";
 
 export function Form() {
   const {
@@ -9,8 +10,13 @@ export function Form() {
     reset,
   } = useForm<Credit>();
 
+  const { setRepaymentOnly, calculateMonthlyAmount, calculateTotalInterest } =
+    useCreditStore();
+
   const calculateMortgage = (data: Credit) => {
-    console.log(data);
+    setRepaymentOnly(data);
+    calculateMonthlyAmount(data);
+    calculateTotalInterest(data);
     reset();
   };
 
@@ -52,7 +58,7 @@ export function Form() {
               id="term"
               className="w-full p-3 rounded-md border border-cyan-950 mt-2"
               type="number"
-              placeholder="Plazo en años"
+              placeholder="Plazo en # de meses"
               {...register("term", {
                 required: "El plazo es un campo requerido",
               })}
@@ -113,12 +119,11 @@ export function Form() {
           {errors.repaymentOnly && <p>{errors.repaymentOnly.message}</p>}
         </div>
 
-        <div className="flex flex-row w-4/5 p-3 mt-10 font-bold justify-center gap-3 bg-[#D8DB2F] text-cyan-950 rounded-full cursor-pointer ">
-          <span>
-            <img src="/img/icon-calculator.svg" alt="" />
-          </span>
-          <input type="submit" value="Calcular Amortización" />
-        </div>
+        <input
+          type="submit"
+          value="Calcular Amortización"
+          className="flex flex-row w-4/5 p-3 mt-10 font-bold justify-center gap-3 bg-[#D8DB2F] text-cyan-950 rounded-full cursor-pointer "
+        />
       </form>
     </div>
   );

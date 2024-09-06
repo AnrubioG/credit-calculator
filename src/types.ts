@@ -1,6 +1,6 @@
 export type Credit = {
-  amount: number;
-  term: number;
-  interest: number;
-  repaymentOnly: boolean;
+  amount: string;
+  term: string;
+  interest: string;
+  repaymentOnly: string;
 };
