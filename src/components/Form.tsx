@@ -163,7 +163,6 @@ export function Form() {
                 id="solo-intereses"
                 type="radio"
                 value="2"
-                className=" active:text-cyan-700"
                 {...register("repaymentOnly", {
                   required: "Debes seleccionar tipo de cálculo",
                 })}
